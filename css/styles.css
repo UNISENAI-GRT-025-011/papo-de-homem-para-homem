@@ -48,6 +48,7 @@
   /* Bordas */
   --border-pixel: 3px;
   --border-soft: 0.8rem;
+  --side-padding: 20vw;
 }
 
 /* ============================================================================
@@ -140,12 +141,12 @@ img {
    CONTAINER E LAYOUT
    ============================================================================ */
 
-header,
-nav,
 .hero,
+footer,
+header,
 main,
-footer {
-  padding: 0 5rem; /* TODO */
+nav {
+  padding: 0 var(--side-padding);
 }
 /*
 .container {
@@ -333,18 +334,6 @@ main > section {
   color: var(--color-text-light);
 }
 
-@media (max-width: 768px) { /* TODO: tornar os "@media" uniformes entre todo o documento */
-  .intro-section {
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
-
-  .intro-section img {
-    width: 100%;
-    height: auto;
-  }
-}
-
 /* ============================================================================
    SEÇÃO DE DESTAQUE
    ============================================================================ */
@@ -483,3 +472,23 @@ footer > *:last-child {
   margin-bottom: var(--spacing-xl);
 }
 
+/* ============================================================================
+   RESPONSIVIDADE DO LAYOUT
+   ============================================================================ */
+
+@media (max-width: 60rem) {
+  * {
+    --side-padding: 4vw;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .intro-section img {
+    width: 80%;
+    height: auto;
+    margin: auto;
+  }
+}
