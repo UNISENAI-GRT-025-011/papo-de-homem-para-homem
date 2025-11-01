@@ -49,6 +49,7 @@
   --border-pixel: 3px;
   --border-soft: 0.8rem;
   --side-padding: 20vw;
+  --content-width: min(55rem, 85vw);
 }
 
 /* ============================================================================
@@ -146,33 +147,27 @@ footer,
 header,
 main,
 nav {
-  padding: 0 var(--side-padding);
-}
-/*
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  /* padding: 0 var(--side-padding); */
+  width: var(--content-width);
+  margin: auto;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-md);
-  }
+.background {
+  background: inherit;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: -3;
+  top: 0;
+  left: calc((100vw - var(--content-width)) * -0.5);
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
-}
-*/
 /* ============================================================================
    HEADER
    ============================================================================ */
 
 header {
+  position: relative;
   background-color: var(--color-dark);
   color: var(--color-white);
   padding-top: var(--spacing-lg); /* TODO: simplificar esse padding  repetido */
@@ -246,6 +241,7 @@ header {
    ============================================================================ */
 
 .top-nav {
+  position: relative;
   background-color: var(--color-primary);
   padding-top: var(--spacing-sm);
   padding-bottom: var(--spacing-sm);
@@ -272,11 +268,15 @@ header {
    ============================================================================ */
 
 .hero {
-  background: linear-gradient(to right, var(--color-gray), var(--color-gray-light));
+  position: relative;
   padding-top: 2rem;
   display: flex;
   align-items: center;
   gap: 3rem;
+}
+
+.hero .background {
+  background: linear-gradient(to right, var(--color-gray), var(--color-gray-light));
 }
 
 .hero-image {
@@ -406,6 +406,7 @@ main > section {
 /* TODO: esse footer tá bem feio kk */
 
 footer {
+  position: relative;
   background-color: var(--color-dark);
   color: var(--color-white);
   padding-top: var(--spacing-2xl);
