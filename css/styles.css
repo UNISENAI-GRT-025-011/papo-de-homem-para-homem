@@ -13,6 +13,7 @@
   --color-text: #000000;
   --color-text-light: #666666;
   --color-accent: #f9cc52;
+  --color-accent-dark: rgba(249, 204, 82, 0.5);
   --color-gray: #a1a1a1;
   --color-gray-light: #d7d7d7;
   
@@ -115,13 +116,6 @@ a:hover {
   opacity: 0.8;
 }
 
-button {
-  font-family: var(--font-family);
-  cursor: pointer;
-  border: none;
-  transition: all var(--transition-base);
-}
-
 /* ============================================================================
    IMAGENS
    ============================================================================ */
@@ -136,6 +130,11 @@ img {
    CONTAINER E LAYOUT
    ============================================================================ */
 
+header,
+nav {
+  padding: 0 5rem; /* TODO */
+}
+/*
 .container {
   width: 100%;
   max-width: 1280px;
@@ -154,48 +153,41 @@ img {
     padding: 0 var(--spacing-sm);
   }
 }
-
+*/
 /* ============================================================================
    HEADER
    ============================================================================ */
 
-.header {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.header-top {
+header {
   background-color: var(--color-dark);
-  padding: var(--spacing-lg) 0;
-}
-
-.header-content {
+  color: var(--color-white);
+  padding-top: var(--spacing-lg); /* TODO: simplificar esse padding  repetido */
+  padding-bottom: var(--spacing-lg);
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-xl);
 }
 
 .logo-section {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: 1rem;
 }
 
-.logo-image {
+.logo-section img {
   width: 80px;
   height: 96px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
-.logo-text h1 {
+.logo-section h1 {
   font-size: var(--font-size-2xl);
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
 
-.logo-text p {
+.logo-section p {
   font-size: var(--font-size-2xl);
   font-weight: 400;
   margin-bottom: 0;
@@ -203,10 +195,9 @@ img {
 
 .search-bar {
   position: relative;
-  flex-shrink: 0;
 }
 
-.search-input {
+.search-bar input {
   width: 384px;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 50px;
@@ -217,18 +208,18 @@ img {
   font-size: var(--font-size-base);
 }
 
-.search-input::placeholder {
+.search-bar input::placeholder {
   color: #999;
 }
 
-.search-input:focus {
+.search-bar input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(249, 204, 82, 0.5);
+  box-shadow: 0 0 0 0.25rem var(--color-accent-dark)
 }
 
-.search-icon {
+.search-bar img {
   position: absolute;
-  right: var(--spacing-md);
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
   width: 24px;
@@ -240,46 +231,26 @@ img {
    NAVEGAÇÃO
    ============================================================================ */
 
-.nav {
+.top-nav {
   background-color: var(--color-primary);
-  padding: var(--spacing-sm) 0;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
 }
 
-.nav-list {
+.top-nav ul {
   display: flex;
   gap: var(--spacing-2xl);
   list-style: none;
 }
 
-.nav-item a {
+.top-nav a {
   color: var(--color-white);
   font-size: var(--font-size-lg);
   font-weight: 400;
-  transition: opacity var(--transition-base);
 }
 
-.nav-item a:hover {
+.top-nav a:hover {
   opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
-
-  .search-bar {
-    width: 100%;
-  }
-
-  .search-input {
-    width: 100%;
-  }
-
-  .nav-list {
-    gap: var(--spacing-lg);
-    font-size: var(--font-size-base);
-  }
 }
 
 /* ============================================================================
