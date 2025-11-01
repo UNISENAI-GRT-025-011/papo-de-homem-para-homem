@@ -1,0 +1,603 @@
+/* ============================================================================
+   IMPORTAÇÕES E VARIÁVEIS GLOBAIS
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Cores */
+  --color-primary: #353e4f;
+  --color-dark: #1a1f2e;
+  --color-light: #f5f5f5;
+  --color-white: #ffffff;
+  --color-text: #000000;
+  --color-text-light: #666666;
+  --color-accent: #f9cc52;
+  --color-gray: #a1a1a1;
+  --color-gray-light: #d7d7d7;
+  
+  /* Espaçamento */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Tipografia */
+  --font-family: 'Poppins', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Transições */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* ============================================================================
+   RESET E ESTILOS BASE
+   ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   TIPOGRAFIA
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* ============================================================================
+   LINKS E BOTÕES
+   ============================================================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+}
+
+/* ============================================================================
+   IMAGENS
+   ============================================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================================
+   CONTAINER E LAYOUT
+   ============================================================================ */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.header-top {
+  background-color: var(--color-dark);
+  padding: var(--spacing-lg) 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logo-image {
+  width: 80px;
+  height: 96px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.logo-text h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.logo-text p {
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.search-bar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 384px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 50px;
+  border: none;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(249, 204, 82, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+/* ============================================================================
+   NAVEGAÇÃO
+   ============================================================================ */
+
+.nav {
+  background-color: var(--color-primary);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--spacing-2xl);
+  list-style: none;
+}
+
+.nav-item a {
+  color: var(--color-white);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  transition: opacity var(--transition-base);
+}
+
+.nav-item a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .nav-list {
+    gap: var(--spacing-lg);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+  background: linear-gradient(to right, var(--color-gray), var(--color-gray-light));
+  padding: var(--spacing-2xl) 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.hero-image {
+  width: 320px;
+  height: 256px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-box {
+  background-color: var(--color-accent);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: inline-block;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-box h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-box h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* ============================================================================
+   MAIN CONTENT
+   ============================================================================ */
+
+main {
+  padding: var(--spacing-2xl) 0;
+}
+
+.section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* ============================================================================
+   INTRODUÇÃO
+   ============================================================================ */
+
+.intro-section {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.intro-image {
+  width: 288px;
+  height: 192px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.intro-text h3 {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  margin-bottom: var(--spacing-md);
+}
+
+.intro-text p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .intro-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .intro-text h3 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* ============================================================================
+   SEÇÃO DE DESTAQUE
+   ============================================================================ */
+
+.highlight-section {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.highlight-section h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-white);
+}
+
+.highlight-section p {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .highlight-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* ============================================================================
+   SEÇÃO DE TIPOS DE VIOLÊNCIA
+   ============================================================================ */
+
+.violence-types-section h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.violence-types-section > p {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.8;
+}
+
+.violence-diagram {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .violence-types-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .violence-types-section > p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ============================================================================
+   SEÇÃO LEI MARIA DA PENHA
+   ============================================================================ */
+
+.lei-section h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.lei-section p {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .lei-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .lei-section p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ============================================================================
+   SEÇÃO EDUCAÇÃO PARA AGRESSORES
+   ============================================================================ */
+
+.education-section h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.education-subsection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.education-subsection h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.education-subsection p {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .education-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .education-subsection h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .education-subsection p {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--spacing-2xl) 0;
+  margin-top: var(--spacing-2xl);
+}
+
+.footer h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .footer h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* ============================================================================
+   RESPONSIVIDADE GERAL
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ============================================================================
+   UTILITÁRIOS
+   ============================================================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mt-xl {
+  margin-top: var(--spacing-xl);
+}
+
+.mb-xl {
+  margin-bottom: var(--spacing-xl);
+}
+
