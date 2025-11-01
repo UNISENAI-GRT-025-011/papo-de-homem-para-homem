@@ -44,6 +44,10 @@
   --transition-fast: 0.15s ease-in-out;
   --transition-base: 0.3s ease-in-out;
   --transition-slow: 0.5s ease-in-out;
+
+  /* Bordas */
+  --border-pixel: 3px;
+  --border-soft: 0.8rem;
 }
 
 /* ============================================================================
@@ -98,7 +102,13 @@ p {
   line-height: 1.8;
 }
 
-strong {
+h2.big-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+}
+
+h3.big-title {
+  font-size: var(--font-size-3xl);
   font-weight: 700;
 }
 
@@ -131,7 +141,10 @@ img {
    ============================================================================ */
 
 header,
-nav {
+nav,
+.hero,
+main,
+footer {
   padding: 0 5rem; /* TODO */
 }
 /*
@@ -259,13 +272,10 @@ header {
 
 .hero {
   background: linear-gradient(to right, var(--color-gray), var(--color-gray-light));
-  padding: var(--spacing-2xl) 0;
-}
-
-.hero-content {
+  padding-top: 2rem;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: 3rem;
 }
 
 .hero-image {
@@ -275,50 +285,30 @@ header {
   flex-shrink: 0;
 }
 
-.hero-text {
-  flex: 1;
-}
-
-.hero-box {
+.hero h2 {
   background-color: var(--color-accent);
   padding: var(--spacing-md) var(--spacing-lg);
-  display: inline-block;
-  margin-bottom: var(--spacing-md);
-}
-
-.hero-box h2 {
   font-size: var(--font-size-3xl);
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: 0;
+  transform: rotate(-2.5deg);
+  border-radius: var(--border-pixel);
 }
 
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
-
-  .hero-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-box h2 {
-    font-size: var(--font-size-2xl);
-  }
-}
+/* TODO: reintroduzir os "@media (max-width..." e deixar a página dinâmica */
 
 /* ============================================================================
    MAIN CONTENT
    ============================================================================ */
 
 main {
-  padding: var(--spacing-2xl) 0;
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
 }
 
-.section {
-  margin-bottom: var(--spacing-2xl);
+main > section {
+  margin-bottom: var(--spacing-xl);
 }
 
 /* ============================================================================
@@ -327,42 +317,31 @@ main {
 
 .intro-section {
   display: flex;
+  flex-direction: row;
   gap: var(--spacing-xl);
   align-items: flex-start;
-  margin-bottom: var(--spacing-2xl);
 }
 
-.intro-image {
+.intro-section img {
   width: 288px;
   height: 192px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
-.intro-text h3 {
-  font-size: var(--font-size-4xl);
-  font-weight: 900;
-  margin-bottom: var(--spacing-md);
-}
-
-.intro-text p {
+.intro-section p {
   font-size: var(--font-size-lg);
   color: var(--color-text-light);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* TODO: tornar os "@media" uniformes entre todo o documento */
   .intro-section {
     flex-direction: column;
     gap: var(--spacing-md);
   }
 
-  .intro-image {
+  .intro-section img {
     width: 100%;
     height: auto;
-  }
-
-  .intro-text h3 {
-    font-size: var(--font-size-2xl);
   }
 }
 
@@ -373,151 +352,83 @@ main {
 .highlight-section {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  border-radius: 8px;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-radius: var(--border-soft);
   margin-bottom: var(--spacing-2xl);
-}
-
-.highlight-section h2 {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-white);
 }
 
 .highlight-section p {
   font-size: var(--font-size-lg);
-  line-height: 1.8;
-  color: var(--color-white);
+  color: var(--color-white); /* TODO: unificar esse "p" com o da classe "intro-section" */
 }
 
-@media (max-width: 768px) {
-  .highlight-section h2 {
-    font-size: var(--font-size-2xl);
-  }
+.highlight-section > *:last-child {
+  /* Seleciona o último element dentro dessa sessão e remove a margem de baixo */
+  /* dica: experimente tirar linhas pra ver o efeito que elas tem */
+  margin-bottom: 0;
 }
+
+/* TODO: Tornar a classe "big-title" menor de acordo com a largura da tela */
 
 /* ============================================================================
    SEÇÃO DE TIPOS DE VIOLÊNCIA
    ============================================================================ */
 
-.violence-types-section h2 {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
-}
-
-.violence-types-section > p {
+.violence-types-section p {
   font-size: var(--font-size-2xl);
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-xl);
-  line-height: 1.8;
 }
 
-.violence-diagram {
-  width: 100%;
+.violence-types-section img {
+  width: 80%;
   height: auto;
-  margin-bottom: var(--spacing-2xl);
-}
-
-@media (max-width: 768px) {
-  .violence-types-section h2 {
-    font-size: var(--font-size-2xl);
-  }
-
-  .violence-types-section > p {
-    font-size: var(--font-size-lg);
-  }
+  margin: var(--spacing-xl) auto;
 }
 
 /* ============================================================================
    SEÇÃO LEI MARIA DA PENHA
    ============================================================================ */
 
-.lei-section h2 {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
-}
 
 .lei-section p {
   font-size: var(--font-size-2xl);
   color: var(--color-text-light);
   line-height: 1.8;
-}
-
-@media (max-width: 768px) {
-  .lei-section h2 {
-    font-size: var(--font-size-2xl);
-  }
-
-  .lei-section p {
-    font-size: var(--font-size-lg);
-  }
+  /* TODO: unificar esses "p" das sections */
 }
 
 /* ============================================================================
    SEÇÃO EDUCAÇÃO PARA AGRESSORES
    ============================================================================ */
 
-.education-section h2 {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
-}
-
-.education-subsection {
+.education-section > * {
   margin-bottom: var(--spacing-xl);
-}
-
-.education-subsection h3 {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
 }
 
 .education-subsection p {
   font-size: var(--font-size-2xl);
-  color: var(--color-text-light);
-  line-height: 1.8;
-}
-
-@media (max-width: 768px) {
-  .education-section h2 {
-    font-size: var(--font-size-2xl);
-  }
-
-  .education-subsection h3 {
-    font-size: var(--font-size-lg);
-  }
-
-  .education-subsection p {
-    font-size: var(--font-size-base);
-  }
+  color: var(--color-text-light); /* TODO */
 }
 
 /* ============================================================================
    FOOTER
    ============================================================================ */
 
-.footer {
+/* TODO: esse footer tá bem feio kk */
+
+footer {
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: var(--spacing-2xl) 0;
-  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10%;
 }
 
-.footer h2 {
-  font-size: var(--font-size-4xl);
-  font-weight: 500;
-  color: var(--color-white);
+footer > *:last-child {
   margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .footer h2 {
-    font-size: var(--font-size-2xl);
-  }
 }
 
 /* ============================================================================
