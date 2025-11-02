@@ -113,6 +113,16 @@ h3.big-title {
   font-weight: 700;
 }
 
+section p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light)
+}
+
+.text-2xl,
+.text-2xl p {
+  font-size: var(--font-size-2xl);
+}
+
 /* ============================================================================
    LINKS E BOTÕES
    ============================================================================ */
@@ -168,8 +178,7 @@ header {
   position: relative;
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding-top: var(--spacing-lg); /* TODO: simplificar esse padding  repetido */
-  padding-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -243,8 +252,7 @@ header {
 .top-nav {
   position: relative;
   background-color: var(--color-primary);
-  padding-top: var(--spacing-sm);
-  padding-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
 }
 
 .top-nav ul {
@@ -300,15 +308,12 @@ header {
   border-radius: var(--border-pixel);
 }
 
-/* TODO: reintroduzir os "@media (max-width..." e deixar a página dinâmica */
-
 /* ============================================================================
    MAIN CONTENT
    ============================================================================ */
 
 main {
-  padding-top: var(--spacing-2xl);
-  padding-bottom: var(--spacing-2xl);
+  padding: var(--spacing-2xl) 0;
 }
 
 main > section {
@@ -333,11 +338,6 @@ main > section {
   border-radius: var(--border-pixel);
 }
 
-.intro-section p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-}
-
 /* ============================================================================
    SEÇÃO DE DESTAQUE
    ============================================================================ */
@@ -351,8 +351,7 @@ main > section {
 }
 
 .highlight-section p {
-  font-size: var(--font-size-lg);
-  color: var(--color-white); /* TODO: unificar esse "p" com o da classe "intro-section" */
+  color: var(--color-white);
 }
 
 .highlight-section > *:last-child {
@@ -367,27 +366,10 @@ main > section {
    SEÇÃO DE TIPOS DE VIOLÊNCIA
    ============================================================================ */
 
-.violence-types-section p {
-  font-size: var(--font-size-2xl);
-  color: var(--color-text-light);
-}
-
 .violence-types-section img {
   width: 80%;
   height: auto;
   margin: var(--spacing-xl) auto;
-}
-
-/* ============================================================================
-   SEÇÃO LEI MARIA DA PENHA
-   ============================================================================ */
-
-
-.lei-section p {
-  font-size: var(--font-size-2xl);
-  color: var(--color-text-light);
-  line-height: 1.8;
-  /* TODO: unificar esses "p" das sections */
 }
 
 /* ============================================================================
@@ -396,11 +378,6 @@ main > section {
 
 .education-section > * {
   margin-bottom: var(--spacing-xl);
-}
-
-.education-subsection p {
-  font-size: var(--font-size-2xl);
-  color: var(--color-text-light); /* TODO */
 }
 
 /* ============================================================================
@@ -413,8 +390,7 @@ footer {
   position: relative;
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding-top: var(--spacing-2xl);
-  padding-bottom: var(--spacing-2xl);
+  padding: var(--spacing-2xl) 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

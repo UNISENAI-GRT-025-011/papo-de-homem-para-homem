@@ -1,3 +1,6 @@
+> [!WARNING]
+> Esse README foi gerado automaticamente no início e não condiz mais com o estado atual do código.
+
 # Papo de Homem para Homem - Website
 
 Um website responsivo e acessível criado com **HTML, CSS e JavaScript puro** (sem dependências externas). Desenvolvido com princípios **SOLID** e **Clean Code**.
