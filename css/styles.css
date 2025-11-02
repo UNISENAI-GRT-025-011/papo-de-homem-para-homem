@@ -48,8 +48,7 @@
   /* Bordas */
   --border-pixel: 3px;
   --border-soft: 0.8rem;
-  --side-padding: 20vw;
-  --content-width: min(55rem, 85vw);
+  --content-width: min(50rem, 87vw);
 }
 
 /* ============================================================================
@@ -147,7 +146,6 @@ footer,
 header,
 main,
 nav {
-  /* padding: 0 var(--side-padding); */
   width: var(--content-width);
   margin: auto;
 }
@@ -204,10 +202,12 @@ header {
 
 .search-bar {
   position: relative;
+  width: 20rem;
 }
 
 .search-bar input {
-  width: 384px;
+  width: 100%;
+  height: 100%;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 50px;
   border: none;
@@ -249,7 +249,9 @@ header {
 
 .top-nav ul {
   display: flex;
-  gap: var(--spacing-2xl);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem var(--spacing-2xl);
   list-style: none;
 }
 
@@ -257,10 +259,12 @@ header {
   color: var(--color-white);
   font-size: var(--font-size-lg);
   font-weight: 400;
+  border-bottom: 0.2rem dotted var(--color-dark);
 }
 
 .top-nav a:hover {
-  opacity: 0.7;
+  border-bottom: 0.2rem dotted currentColor;
+  /* "currentColor" significa a cor do texto do elemento atual */
 }
 
 /* ============================================================================
@@ -279,11 +283,10 @@ header {
   background: linear-gradient(to right, var(--color-gray), var(--color-gray-light));
 }
 
-.hero-image {
+.hero img {
   width: 320px;
   height: 256px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .hero h2 {
@@ -327,6 +330,7 @@ main > section {
   width: 288px;
   height: 192px;
   object-fit: cover;
+  border-radius: var(--border-pixel);
 }
 
 .intro-section p {
@@ -422,30 +426,6 @@ footer > *:last-child {
 }
 
 /* ============================================================================
-   RESPONSIVIDADE GERAL
-   ============================================================================ */
-
-@media (max-width: 480px) {
-  :root {
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 2.5rem;
-  }
-
-  h1 {
-    font-size: var(--font-size-2xl);
-  }
-
-  h2 {
-    font-size: var(--font-size-xl);
-  }
-
-  h3 {
-    font-size: var(--font-size-lg);
-  }
-}
-
-/* ============================================================================
    UTILITÁRIOS
    ============================================================================ */
 
@@ -478,8 +458,25 @@ footer > *:last-child {
    ============================================================================ */
 
 @media (max-width: 60rem) {
-  * {
-    --side-padding: 4vw;
+  .logo-section img {
+    width: max(4rem, 20%);
+    height: auto;
+  }
+
+  .logo-section h1,
+  .logo-section p {
+    font-size: max(1rem, 2.5vw);
+  }
+
+
+  .hero {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .hero img {
+    width: 70%;
+    height: auto;
   }
 
   .intro-section {
@@ -491,5 +488,23 @@ footer > *:last-child {
     width: 80%;
     height: auto;
     margin: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 37rem) {
+  header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    height: 3rem;
   }
 }
