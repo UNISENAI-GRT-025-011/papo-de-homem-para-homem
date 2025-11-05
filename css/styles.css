@@ -178,7 +178,7 @@ header {
   position: relative;
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-sm) 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -189,29 +189,24 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transform: translateX(calc(-70px - 1rem)); /* Width da img + gap da linha anterior */
 }
 
 .logo-section img {
-  width: 80px;
-  height: 96px;
+  width: 70px;
+  height: auto;
   object-fit: cover;
 }
 
-.logo-section h1 {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
 .logo-section p {
-  font-size: var(--font-size-2xl);
-  font-weight: 400;
+  font-size: var(--font-size-xl);
   margin-bottom: 0;
 }
 
 .search-bar {
   position: relative;
   width: 20rem;
+  height: 2.5rem;
 }
 
 .search-bar input {
@@ -434,16 +429,17 @@ footer > *:last-child {
    ============================================================================ */
 
 @media (max-width: 60rem) {
-  .logo-section img {
-    width: max(4rem, 20%);
-    height: auto;
+  .logo-section {
+    transform: translateX(0);
   }
 
-  .logo-section h1,
+  .logo-section img {
+    width: max(70px, 20%);
+  }
+
   .logo-section p {
     font-size: max(1rem, 2.5vw);
   }
-
 
   .hero {
     flex-direction: column-reverse;
@@ -481,6 +477,5 @@ footer > *:last-child {
 
   .search-bar {
     width: 100%;
-    height: 3rem;
   }
 }
