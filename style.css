@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --cor-azul-leve: #9CD4ED;
+    --cor-azul-marinho: #002865;
+    --cor-cinza-profundo: #21252B;
+
+    --raio-das-bordas-medio: 1.2rem;
+    --largura-do-conteudo: min(60rem, 95vw);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.05rem;
+    line-height: 1.6rem;
+}
+
+.highlight {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+}
+
+header {
+    background-color: var(--cor-azul-leve);
+    margin: 0;
+}
+
+header .logos {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 10rem;
+    padding: 0.5rem 0;
+}
+
+header .logos img {
+    height: 4.5rem;
+}
+
+header nav {
+    background-color: var(--cor-azul-marinho);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header nav a,
+footer nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+header nav p,
+footer nav p {
+    margin: 0;
+}
+
+header nav a:hover,
+header nav a:focus,
+footer nav a:hover,
+footer nav a:focus {
+    text-decoration: underline;
+}
+
+main {
+    width: var(--largura-do-conteudo);
+    margin: auto;
+}
+
+.content-with-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content-with-image img {
+    display: inline-block;
+    height: 8rem;
+    width: auto;
+    margin: 2rem;
+}
+
+#bloco-maria-da-penha {
+    color: white;
+    background-color: var(--cor-azul-marinho);
+}
+
+.background {
+    background: inherit;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    left: calc((100vw - var(--largura-do-conteudo)) * -0.5);
+}
+
+#imagem-maria-da-penha {
+    height: 17rem;
+}
+
+#imagem-policial {
+    height: 25rem;
+}
+
+ol,
+ul {
+    list-style: none;
+    counter-reset: num;
+    margin: 0;
+    padding: 0;
+}
+
+ol li,
+ul li {
+    background-color: #EBEBEB;
+    padding: 1rem;
+    margin: 1rem 0;
+    counter-increment: num;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    border-radius: var(--raio-das-bordas-medio);
+}
+
+ol li::before,
+ul li::before {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ol li::before {
+    content: counter(num);
+}
+
+ul li::before {
+    content: "➤";
+}
+
+footer {
+    color: white;
+    background-color: var(--cor-cinza-profundo);
+    margin: 0;
+    margin-top: 1rem;
+    padding: 2rem 10vw;
+}
+
+footer #servicos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+footer #servicos nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 0.2rem;
+    text-wrap: no;
+}
+
+footer .brasao {
+    height: 4.5rem;
+}
+
+footer hr {
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    outline: none;
+    border: none;
+    margin: 1rem;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer #copyright {
+    margin: auto;
+    width: fit-content;
+}
