@@ -24,6 +24,11 @@ h2 {
     font-weight: 900;
 }
 
+h3 {
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
 .regular  {
     text-align: justify;
     font-size: 1.375rem;
@@ -60,6 +65,10 @@ h2 {
     line-height: 3.75rem;
 }
 
+.highlight-diff-default > b {
+    font-weight: 700;
+}
+
 .highlight > b {
     font-weight: 600;
 }
@@ -76,6 +85,7 @@ header .logos {
     justify-content: space-around;
     padding: 0.5rem 0;
     height: min(10vw, 4.5rem);
+    
 }
 
 header nav {
