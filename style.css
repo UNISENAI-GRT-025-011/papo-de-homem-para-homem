@@ -6,7 +6,7 @@
     --cor-cinza-profundo: #21252B;
 
     --raio-das-bordas-medio: 1.2rem;
-    --largura-do-conteudo: min(60rem, 90vw);
+    --largura-do-conteudo: min(75rem, 90vw);
 }
 
 * {
@@ -20,21 +20,48 @@ body {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 900;
 }
 
-p {
+.regular  {
     text-align: justify;
-    font-size: 1.05rem;
-    line-height: 1.6rem;
+    font-size: 1.375rem;
+    line-height: 2.063rem;
+}
+
+.regular > b  {
+    font-weight: 700;
+}
+
+.italico  {
+    font-style: italic;
+    text-align: justify;
+    font-size: 1.375rem;
+    line-height: 2.063rem;
+}
+
+.italico > b  {
+    font-style: italic;
+    font-weight: 700;
 }
 
 .highlight {
     text-align: left;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 3.75rem;
+}
+
+.highlight-diff-default {
+    text-align: justify;
     font-size: 2rem;
     font-weight: 300;
-    line-height: 2.4rem;
+    line-height: 3.75rem;
+}
+
+.highlight > b {
+    font-weight: 600;
 }
 
 header {
@@ -81,18 +108,31 @@ footer nav a:focus {
 
 main {
     width: var(--largura-do-conteudo);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .content-with-image {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap:  2rem;
 }
 
 .content-with-image img {
     display: inline-block;
-    height: 8rem;
+    height: auto;
+    width: 11.25rem;
+}
+
+.content-with-image img.width-diff-default {
+    display: inline-block;
+    height: 11.25rem;
+    width: auto;
+}
+
+.content-with-image img.imagem-destaque {
+    display: inline-block;
+    height: 10rem;
     width: auto;
     margin: 2rem;
 }
@@ -131,19 +171,19 @@ ul {
 ol li,
 ul li {
     background-color: #EBEBEB;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 0.625rem;
+    margin: 1.563rem 0;
     counter-increment: num;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 2.5rem;
     border-radius: var(--raio-das-bordas-medio);
 }
 
 ol li::before,
 ul li::before {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
