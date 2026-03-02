@@ -90,10 +90,6 @@ header .logos {
 
 header nav {
     background-color: var(--cor-azul-marinho);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0 2rem;
 }
 
 header nav a,
@@ -112,8 +108,78 @@ footer nav p {
 header nav a:hover,
 header nav a:focus,
 footer nav a:hover,
-footer nav a:focus {
+footer nav a:focus,
+#nav-hamburger-label:hover,
+#nav-hamburger-label:focus,
+#nav-hamburger-input:hover~#nav-hamburger-label,
+#nav-hamburger-input:focus~#nav-hamburger-label {
     text-decoration: underline;
+}
+
+header nav .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    height: fit-content;
+    justify-content: center;
+    opacity: 1;
+    width: 100%;
+}
+
+#nav-hamburger-input,
+#nav-hamburger-label {
+    display: none; /* Menu hamburger escondido. */
+}
+
+@media only screen and (max-width: 41rem) { /* Menu hamburger visível. */
+    #nav-hamburger-input {
+        display: block;
+        left: -999rem; /* Faça o checkbox selecionável, mas deixe ele escondido. */
+        position: absolute;
+    }
+
+    #nav-hamburger-input:not(:checked)~.menu {
+        height: 0;
+        opacity: 0;
+    }
+
+    #nav-hamburger-label {
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        padding: 0.25rem;
+        user-select: none;
+    }
+
+    #nav-hamburger-input:checked~#nav-hamburger-label {
+        background-color: var(--cor-cinza-profundo);
+        text-decoration: underline;
+    }
+
+    header nav .menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 16rem;
+        overflow: hidden;
+        transition: height 0.5s, opacity 0.25s;
+    }
+
+    header nav .menu a {
+        display: block;
+        padding-left: 10vw;
+    }
+
+    header nav .menu a:hover,
+    header nav .menu a:focus,
+    #nav-hamburger-label:hover,
+    #nav-hamburger-label:focus,
+    #nav-hamburger-input:hover~#nav-hamburger-label,
+    #nav-hamburger-input:focus~#nav-hamburger-label {
+        background-color: var(--cor-cinza-profundo);
+    }
 }
 
 main {
