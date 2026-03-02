@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAPO DE HOMEM PARA HOMEM</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,10 @@
             <input type="checkbox" id="nav-hamburger-input">
             <label for="nav-hamburger-input" id="nav-hamburger-label"><p class="regular">Menu</p></label>
             <div class="menu">
-                <p class="regular"><a href="#">Início</a></p>
-                <p class="regular"><a href="#">Informações</a></p>
-                <p class="regular"><a href="#">Estatísticas</a></p>
-                <p class="regular"><a href="#">Contato</a></p>
+               <p class="regular"><a href="#inicio">Início</a></p>
+               <p class="regular"><a href="#informacoes">Informações</a></p>
+               <p class="regular"><a href="#estatisticas">Estatísticas</a></p>
+               <p class="regular"><a href="#contato">Contato</a></p>
             </div>
         </nav>
     </header>
@@ -56,7 +57,7 @@
             <img id="imagem-policial" src="images/policial.png" class="imagem-destaque">
         </div>
 
-        <h2>Lei Maria da Penha Para Que Serve?</h2>
+        <h2 id="informacoes">Lei Maria da Penha Para Que Serve?</h2>
 
         <p class="regular">
             Todas as pessoas (independentemente de raça, classe social,
@@ -127,7 +128,7 @@
             à cultura machista em que vivemos.
         </p>
 
-        <h2>Histórico da Lei</h2>
+        <h2 id="estatisticas">Histórico da Lei</h2>
 
         <p class="regular">
             A Lei Maria da Penha foi criada para responder a um problema
@@ -525,7 +526,7 @@
 
     </main>
 
-    <footer>
+    <footer id="contato">
         <div class="footer-content">
             <img src="images/brasao-on-black.png" class="brasao">
             <div id="servicos">
