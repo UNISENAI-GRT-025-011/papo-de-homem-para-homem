@@ -1,0 +1,126 @@
+/* Estilos do header e menu */
+
+header {
+    background-color: var(--cor-azul-leve);
+    margin: 0;
+}
+
+header .logos {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    height: min(10vw, 4.5rem);
+
+}
+
+header nav {
+    background-color: var(--cor-azul-marinho);
+}
+
+header nav a,
+footer nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+header nav p,
+footer nav p {
+    margin: 0;
+}
+
+header nav a:hover,
+header nav a:focus,
+footer nav a:hover,
+footer nav a:focus,
+#nav-hamburger-label:hover,
+#nav-hamburger-label:focus,
+#nav-hamburger-input:hover~#nav-hamburger-label,
+#nav-hamburger-input:focus~#nav-hamburger-label {
+    text-decoration: underline;
+}
+
+header nav .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    height: fit-content;
+    justify-content: center;
+    opacity: 1;
+    width: 100%;
+}
+
+#nav-hamburger-input,
+#nav-hamburger-label {
+    display: none; /* Menu hamburger escondido. */
+}
+
+@media only screen and (max-width: 41rem) { /* Menu hamburger visível. */
+    #nav-hamburger-input {
+        display: block;
+        left: -999rem; /* Faça o checkbox selecionável, mas deixe ele escondido. */
+        position: absolute;
+    }
+
+    #nav-hamburger-input:not(:checked)~.menu {
+        height: 0;
+        opacity: 0;
+    }
+
+    #nav-hamburger-label {
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        padding: 0.25rem 2rem 0.25rem 0.25rem;
+        user-select: none;
+    }
+
+    #nav-hamburger-input:checked~#nav-hamburger-label {
+        background-color: var(--cor-cinza-profundo);
+        text-decoration: underline;
+    }
+
+    #nav-hamburger-label .regular::after {
+        content: "≡";
+        font-size: 1.5rem;
+        position: absolute;
+        right: -1.8rem;
+        top: -0.05rem;
+        width: fit-content;
+    }
+
+    #nav-hamburger-input:checked~#nav-hamburger-label .regular::after {
+        content: "×";
+        font-size: 2rem;
+        right: -1.8rem;
+        top: 0.05rem;
+    }
+
+    header nav .menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 16rem;
+        overflow: hidden;
+        transition: height 0.5s, opacity 0.25s;
+    }
+
+    header nav .menu a {
+        display: block;
+        padding-left: 10vw;
+    }
+
+    header nav .menu a:hover,
+    header nav .menu a:focus,
+    #nav-hamburger-label:hover,
+    #nav-hamburger-label:focus,
+    #nav-hamburger-input:hover~#nav-hamburger-label,
+    #nav-hamburger-input:focus~#nav-hamburger-label {
+        background-color: var(--cor-cinza-profundo);
+    }
+}

@@ -1,0 +1,83 @@
+/* Botões, cards, destaques */
+
+#imagem-policial {
+    height: 25rem;
+}
+
+#imagem-maria-da-penha {
+    height: 17rem;
+}
+
+#bloco-maria-da-penha {
+    color: white;
+    background-color: var(--cor-azul-marinho);
+}
+
+.background {
+    background: inherit;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    left: calc((100vw - var(--largura-do-conteudo)) * -0.5);
+}
+
+ol,
+ul {
+    list-style: none;
+    counter-reset: num;
+    margin: 0;
+    padding: 0;
+}
+
+ol li,
+ul li {
+    background-color: #EBEBEB;
+    padding: 0.625rem;
+    margin: 1.563rem 0;
+    counter-increment: num;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    border-radius: var(--raio-das-bordas-medio);
+}
+
+ol li::before,
+ul li::before {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+ol li::before {
+    content: counter(num);
+}
+
+ul li::before {
+    content: "➤";
+}
+
+.video {
+    background-color: #00286534;
+    width: 23rem;
+    height: 40.93rem;
+}
+
+#info-video {
+    display: none;
+}
+
+@media only screen and (max-width: 45rem) {
+    .video {
+        background-color: #00286534;
+        width: 23rem;
+        height: 40.93rem;
+        scroll-snap-align: center;
+    }
+
+    #info-video {
+        display: flex;
+        justify-content: center;
+    }
+}

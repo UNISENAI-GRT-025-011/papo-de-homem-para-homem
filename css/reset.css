@@ -1,0 +1,10 @@
+/* Normalização de estilos */
+
+* {
+    position: relative;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
