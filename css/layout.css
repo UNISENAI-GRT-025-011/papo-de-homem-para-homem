@@ -1,0 +1,56 @@
+/* Estrutura geral: containers, grids */
+
+main {
+    width: var(--largura-do-conteudo);
+    margin: 0 auto;
+}
+
+.content-with-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content-with-image img {
+    display: inline-block;
+    height: auto;
+    width: 11.25rem;
+}
+
+.content-with-image img.width-diff-default {
+    display: inline-block;
+    height: 11.25rem;
+    width: auto;
+}
+
+.content-with-image img.imagem-destaque {
+    display: inline-block;
+    height: 10rem;
+    width: auto;
+    margin: 2rem;
+}
+
+.group-videos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 45rem) {
+    .content-with-image {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .group-videos {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        gap: 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+    }
+}

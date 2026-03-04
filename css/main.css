@@ -1,0 +1,8 @@
+/* Arquivo principal que importa os demais */
+
+@import url(components.css);
+@import url(footer.css);
+@import url(header.css);
+@import url(layout.css);
+@import url(reset.css);
+@import url(variables.css);
