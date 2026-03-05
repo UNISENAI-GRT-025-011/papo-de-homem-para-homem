@@ -3,8 +3,7 @@
 footer {
     color: white;
     background-color: var(--cor-cinza-profundo);
-    margin: 0;
-    margin-top: 1rem;
+    margin: auto 0 0 0;
     padding: 2rem 10vw;
 }
 
