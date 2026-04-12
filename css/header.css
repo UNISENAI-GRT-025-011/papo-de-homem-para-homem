@@ -12,7 +12,6 @@ header .logos {
     justify-content: space-around;
     padding: 0.5rem 0;
     height: min(10vw, 4.5rem);
-
 }
 
 header nav {
@@ -56,13 +55,53 @@ header nav .menu {
 
 #nav-hamburger-input,
 #nav-hamburger-label {
-    display: none; /* Menu hamburger escondido. */
+    display: none;
 }
 
-@media only screen and (max-width: 41rem) { /* Menu hamburger visível. */
+/* ── Subnavegação de Informações ── */
+
+.menu-item-with-sub {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-azul-marinho);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+    border-top: 2px solid var(--cor-azul-leve);
+    min-width: 13rem;
+    z-index: 100;
+}
+
+.submenu p {
+    margin: 0;
+}
+
+.submenu a {
+    font-size: 0.95rem !important;
+    padding: 0.4rem 1.2rem !important;
+}
+
+.menu-item-with-sub:hover .submenu,
+.menu-item-with-sub:focus-within .submenu {
+    display: block;
+}
+
+/* ── Estado ativo ── */
+
+a.active {
+    font-weight: 700;
+}
+
+/* ── Menu hamburger (mobile) ── */
+
+@media only screen and (max-width: 41rem) {
     #nav-hamburger-input {
         display: block;
-        left: -999rem; /* Faça o checkbox selecionável, mas deixe ele escondido. */
+        left: -999rem;
         position: absolute;
     }
 
@@ -105,7 +144,7 @@ header nav .menu {
     header nav .menu {
         flex-direction: column;
         flex-wrap: nowrap;
-        height: 16rem;
+        height: 24rem;
         overflow: hidden;
         transition: height 0.5s, opacity 0.25s;
     }
@@ -122,5 +161,20 @@ header nav .menu {
     #nav-hamburger-input:hover~#nav-hamburger-label,
     #nav-hamburger-input:focus~#nav-hamburger-label {
         background-color: var(--cor-cinza-profundo);
+    }
+
+    /* Submenu mobile: inline, sem posicionamento absoluto */
+    .submenu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        border-left: 3px solid var(--cor-azul-leve);
+        min-width: unset;
+        margin-left: 10vw;
+    }
+
+    .submenu a {
+        padding-left: 1.5rem !important;
     }
 }
