@@ -31,6 +31,12 @@ h3 {
     line-height: 2.063rem;
 }
 
+.navfont {
+    text-align: center;
+    font-size: 1.375rem;
+    line-height: 2.063rem;
+}
+
 .regular>b {
     font-weight: 700;
 }
