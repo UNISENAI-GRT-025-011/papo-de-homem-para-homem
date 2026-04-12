@@ -68,3 +68,33 @@ h3 {
 .highlight>b {
     font-weight: 600;
 }
+
+@media only screen and (max-width: 45rem) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .regular {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .italico {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .highlight {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
+
+    .highlight-diff-default {
+        font-size: 1.4rem;
+        line-height: 2.25rem;
+    }
+}
