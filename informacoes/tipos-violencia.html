@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipos de Violência — Papo de Homem para Homem</title>
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../scripts.js"></script>
+    <link rel="stylesheet" href="../css/videos.css">
+    <script src="../scripts/videos.js"></script>
+
 </head>
 
 <body>
-
     <header>
         <div class="logos">
             <img src="../images/brasao-on-white.png" class="brasao">
@@ -132,33 +133,12 @@
             relações mais saudáveis. Assista:
         </p>
 
-        <div>
-            <div class="group-videos" id="videos">
-                <div>
-                    <iframe class="video"
-                        src="https://www.youtube.com/embed/47TG6-Zjxbc?si=54vSdNPscdA2KvE0&amp;controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <iframe class="video"
-                        src="https://www.youtube.com/embed/suLxme_-yn4?si=qGNJmYqAgZgbd5B5&amp;controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <iframe class="video"
-                        src="https://www.youtube.com/embed/juG4GYp6URE?si=fU-cXu8g44ooK3g4&amp;controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div id="info-video">
-                <p>Deslize para a direita para ver outros vídeos</p>
-            </div>
+        <div id="tiktok-carousel" class="tiktok-carousel">
+            <div class="slides"></div>
+            <button class="nav-arrow prev" aria-label="Vídeo anterior">&#8249;</button>
+            <button class="nav-arrow next" aria-label="Próximo vídeo">&#8250;</button>
+            <div class="indicators"></div>
+            <p class="swipe-hint">Deslize para o lado</p>
         </div>
 
         <p class="highlight-diff-default">
