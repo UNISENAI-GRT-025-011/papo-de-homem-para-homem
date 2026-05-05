@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei Maria da Penha — Papo de Homem para Homem</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../scripts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="logos">
+            <img src="../images/brasao-on-white.png" class="brasao">
+            <img src="../images/phph-logo.png">
+        </div>
+        <nav>
+            <input type="checkbox" id="nav-hamburger-input">
+            <label for="nav-hamburger-input" id="nav-hamburger-label">
+                <p class="regular">Menu</p>
+            </label>
+            <div class="menu">
+                <p class="regular"><a href="../index.html">Início</a></p>
+                <div class="menu-item-with-sub">
+                    <p class="regular"><a href="lei-maria-da-penha.html" class="active">Informações</a></p>
+                    <div class="submenu">
+                        <p class="regular"><a href="lei-maria-da-penha.html">Lei Maria da Penha</a></p>
+                        <p class="regular"><a href="machismo-e-violencia.html">Machismo e Violência</a></p>
+                        <p class="regular"><a href="tipos-violencia.html">Tipos de Violência</a></p>
+                        <p class="regular"><a href="quizes.html">Quiz</a></p>
+                    </div>
+                </div>
+                <p class="regular"><a href="https://www.pjc.mt.gov.br/estatisticas1">Estatísticas</a></p>
+                <p class="regular"><a href="https://www.pjc.mt.gov.br/diretoria-geral">Contato</a></p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <!-- Quiz Section -->
+    <section id="quiz" class="mt-16 bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold text-center text-blue-600 mb-8">Teste seu Conhecimento!</h2>
+        <div id="quiz-container" class="max-w-2xl mx-auto">
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">1. Qual máquina de criptografia foi um dos principais alvos dos primeiros computadores na Segunda Guerra Mundial?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q1" value="a" class="mr-2">A) ARPANET</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q1" value="b" class="mr-2">B) Enigma</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q1" value="c" class="mr-2">C) Colossus</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">2. Qual foi a rede precursora da internet, desenvolvida para fins militares?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q2" value="a" class="mr-2">A) World Wide Web</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q2" value="b" class="mr-2">B) Ethernet</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q2" value="c" class="mr-2">C) ARPANET</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">3. O que popularizou o acesso à informação na internet para o público geral nos anos 90?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q3" value="a" class="mr-2">A) O e-mail</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q3" value="b" class="mr-2">B) A World Wide Web e os navegadores</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q3" value="c" class="mr-2">C) A fibra ótica</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">4. Qual invenção foi fundamental para tornar a informação onipresente no dia a dia a partir dos anos 2000?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q4" value="a" class="mr-2">A) O rádio</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q4" value="b" class="mr-2">B) O smartphone</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q4" value="c" class="mr-2">C) O mainframe</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">5. A Web 2.0 (era das redes sociais) é caracterizada principalmente por:</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q5" value="a" class="mr-2">A) Apenas o consumo passivo de conteúdo.</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q5" value="b" class="mr-2">B) A criação e o compartilhamento de conteúdo pelos usuários.</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q5" value="c" class="mr-2">C) A comunicação apenas por e-mail.</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">6. Qual tecnologia é a principal responsável por personalizar e organizar a vasta quantidade de informação hoje em dia?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q6" value="a" class="mr-2">A) Inteligência Artificial (IA)</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q6" value="b" class="mr-2">B) Computação em Nuvem</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q6" value="c" class="mr-2">C) Blockchain</label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <p class="font-semibold text-lg mb-2">7. O que são "deepfakes", mencionados como um desafio para o futuro da informação?</p>
+                <div class="space-y-2">
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q7" value="a" class="mr-2">A) Redes de internet antigas.</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q7" value="b" class="mr-2">B) Vídeos ou áudios falsos criados por IA para parecerem reais.</label>
+                    <label class="block pl-4 rounded-md border border-gray-200 p-2 hover:bg-gray-50"><input type="radio" name="q7" value="c" class="mr-2">C) Cópias de segurança de dados.</label>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="submit-quiz" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300 text-lg">
+                    Verificar Respostas
+                </button>
+            </div>
+            <div id="quiz-results" class="mt-6 text-center font-bold text-2xl"></div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center p-6 bg-gray-800 text-white mt-12">
+    <p>&copy; 2025 A Revolução da Informação. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+    document.getElementById('submit-quiz').addEventListener('click', () => {
+        const answers = {
+            q1: 'b',
+        };
+        let score = 0;
+        const totalQuestions = Object.keys(answers).length;
+
+        for (const question in answers) {
+            const radios = document.querySelectorAll(`input[name="${question}"]`);
+            const correctAnswer = answers[question];
+            let answeredCorrectly = false;
+
+            radios.forEach(radio => {
+                const label = radio.parentElement;
+                label.classList.remove('bg-green-200', 'bg-red-200', 'border-green-500', 'border-red-500');
+                label.style.fontWeight = 'normal';
+
+                if (radio.checked) {
+                    if (radio.value === correctAnswer) {
+                        score++;
+                        answeredCorrectly = true;
+                        label.classList.add('bg-green-200', 'border-green-500');
+                    } else {
+                        label.classList.add('bg-red-200', 'border-red-500');
+                    }
+                }
+                // Highlight correct answer if user got it wrong
+                if (radio.value === correctAnswer && radio.checked === false) {
+                // Find the label of the correct answer and highlight it if user chose wrong
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if(selected && selected.value !== correctAnswer){
+                    label.classList.add('bg-green-200', 'border-green-500');
+                    label.style.fontWeight = 'bold';
+                }
+                }
+            });
+        }
+        
+        const resultsContainer = document.getElementById('quiz-results');
+        resultsContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} perguntas!`;
+        
+        if (score === totalQuestions) {
+            resultsContainer.className = 'mt-6 text-center font-bold text-2xl text-green-600';
+        } else if (score > totalQuestions / 2) {
+            resultsContainer.className = 'mt-6 text-center font-bold text-2xl text-yellow-600';
+        } else {
+            resultsContainer.className = 'mt-6 text-center font-bold text-2xl text-red-600';
+        }
+        
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    </script>
+
+    </main>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <img src="../images/brasao-on-black.png" class="brasao">
+            <div id="servicos">
+                <p class="regular"><strong>Serviços</strong></p>
+                <nav>
+                    <p class="regular"><a href="#">Agenda</a></p>
+                    <p class="regular"><a href="https://delegaciadigital.pjc.mt.gov.br/">Delegacia Digital</a></p>
+                    <p class="regular"><a href="https://www.pjc.mt.gov.br/estatisticas1">Estatísticas</a></p>
+                    <p class="regular"><a href="https://www.pjc.mt.gov.br/fale-com-a-corregedoria">Fale Corregedoria</a>
+                    </p>
+                    <p class="regular"><a href="https://www.pjc.mt.gov.br/diretoria-geral">Contatos / Unidades</a></p>
+                    <p class="regular"><a href="https://sosmulher.pjc.mt.gov.br/">Dicas de Segurança</a></p>
+                    <p class="regular"><a href="https://www.pjc.mt.gov.br/inicio">Fale com a PJC</a></p>
+                    <p class="regular"><a href="https://ouvidoria.cge.mt.gov.br/falecidadao/">Fale Ouvidoria</a></p>
+                </nav>
+            </div>
+        </div>
+        <hr>
+        <p id="copyright">Polícia Judiciária Civil do Estado de Mato Grosso
+            - Copyright ©2025 - Todos os Direitos Reservados</p>
+    </footer>
+
+</body>
+
+</html>
