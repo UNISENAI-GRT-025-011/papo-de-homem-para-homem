@@ -4,7 +4,11 @@ document.getElementById('submit-quiz').addEventListener('click', () => {
         q2: 'a',
         q3: 'a',
         q4: 'a',
-        q5: 'a'
+        q5: 'a',
+        q6: 'b',
+        q7: 'a',
+        q8: 'a',
+        q9: 'b'
     };
 
     let score = 0;
