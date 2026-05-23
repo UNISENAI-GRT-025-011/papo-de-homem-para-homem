@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizes</title>
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../scripts.js"></script>
-
-    
+    <script src="../scripts/quizes.js" defer></script>
 </head>
 
 <body>
@@ -41,113 +39,58 @@
     </header>
 
     <main>
-    <section id="quiz">
-        <h2>Quiz</h2>
-        <div id="quiz-container">
-            <div class="mb-6">
-                <p>1. O feminicídio considera qualquer assassinato de mulher como crime hediondo, independentemente da motivação?</p>
-                <div class="space-y-2">
-                    <label><input type="radio" name="q1" value="a">Verdadeiro</label>
-                    <label><input type="radio" name="q1" value="b">Falso</label>
+        <section id="quiz">
+            <h2>Quiz</h2>
+            <div id="quiz-container">
+                <div class="mb-6">
+                    <p class="regular">1. O feminicídio considera qualquer assassinato de mulher como crime hediondo,
+                        independentemente da motivação?</p>
+                    <div class="space-y-2">
+                        <label><input type="radio" name="q1" value="a">Verdadeiro</label>
+                        <label><input type="radio" name="q1" value="b">Falso</label>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-6">
-                <p>2. A Lei Maria da Penha prevê medidas protetivas de urgência, como o afastamento do agressor e a proibição de contato com a vítima?</p>
-                <div class="space-y-2">
-                    <label><input type="radio" name="q2" value="a">Verdadeiro</label>
-                    <label><input type="radio" name="q2" value="b">Falso</label>
+                <div class="mb-6">
+                    <p class="regular">2. A Lei Maria da Penha prevê medidas protetivas de urgência, como o afastamento
+                        do agressor e a proibição de contato com a vítima?</p>
+                    <div class="space-y-2">
+                        <label><input type="radio" name="q2" value="a">Verdadeiro</label>
+                        <label><input type="radio" name="q2" value="b">Falso</label>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-6">
-                <p>3. A Lei do Minuto Seguinte garante atendimento imediato e gratuito às vítimas de violência sexual, mesmo sem a apresentação de boletim de ocorrência?</p>
-                <div class="space-y-2">
-                    <label><input type="radio" name="q3" value="a">Verdadeiro</label>
-                    <label><input type="radio" name="q3" value="b">Falso</label>
+                <div class="mb-6">
+                    <p class="regular">3. A Lei do Minuto Seguinte garante atendimento imediato e gratuito às vítimas de
+                        violência sexual, mesmo sem a apresentação de boletim de ocorrência?</p>
+                    <div class="space-y-2">
+                        <label><input type="radio" name="q3" value="a">Verdadeiro</label>
+                        <label><input type="radio" name="q3" value="b">Falso</label>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-6">
-                <p>4. A Lei do Stalking considera crime a perseguição repetitiva que pode ocorrer tanto presencialmente quanto no ambiente digital?</p>
-                <div class="space-y-2">
-                    <label><input type="radio" name="q4" value="a">Verdadeiro</label>
-                    <label><input type="radio" name="q4" value="b">Falso</label>
+                <div class="mb-6">
+                    <p class="regular">4. A Lei do Stalking considera crime a perseguição repetitiva que pode ocorrer
+                        tanto presencialmente quanto no ambiente digital?</p>
+                    <div class="space-y-2">
+                        <label><input type="radio" name="q4" value="a">Verdadeiro</label>
+                        <label><input type="radio" name="q4" value="b">Falso</label>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-6">
-                <p>5. A Lei Carolina Dieckmann (Lei nº 12.737/2012) tornou crime a invasão de computadores ou telemóveis alheios, desde que o dispositivo esteja protegido por algum mecanismo de segurança (como uma password ou padrão de bloqueio) e que a invasão ocorra sem autorização.</p>
-                <div class="space-y-2">
-                    <label><input type="radio" name="q5" value="a">Verdadeiro</label>
-                    <label><input type="radio" name="q5" value="b">Falso</label>
+                <div class="mb-6">
+                    <p class="regular">5. A Lei Carolina Dieckmann (Lei nº 12.737/2012) tornou crime a invasão de
+                        computadores ou telemóveis alheios, desde que o dispositivo esteja protegido por algum mecanismo
+                        de segurança (como uma password ou padrão de bloqueio) e que a invasão ocorra sem autorização.
+                    </p>
+                    <div class="space-y-2">
+                        <label><input type="radio" name="q5" value="a">Verdadeiro</label>
+                        <label><input type="radio" name="q5" value="b">Falso</label>
+                    </div>
                 </div>
+                <div style="text-align: center;">
+                    <button id="submit-quiz">Verificar Respostas</button>
+                </div>
+                <div id="quiz-results"></div>
             </div>
-            <div style="text-align: center;">
-                <button id="submit-quiz">Verificar Respostas</button>
-            </div>
-            <div id="quiz-results"></div>
-        </div>
-    </section>
-    <br/>
-    </main>
-    <script>
-        document.getElementById('submit-quiz').addEventListener('click', () => {
-            const answers = {
-                q1: 'b',
-                q2: 'a',
-                q3: 'a',
-                q4: 'a',
-                q5: 'a'
-            };
-
-            let score = 0;
-            const totalQuestions = Object.keys(answers).length;
-
-            for (const question in answers) {
-                const radios = document.querySelectorAll(`input[name="${question}"]`);
-                const correctAnswer = answers[question];
-
-                radios.forEach(radio => {
-                    const label = radio.parentElement;
-
-                    // limpa estilos anteriores
-                    label.classList.remove('correct', 'wrong');
-
-                    if (radio.checked) {
-                        if (radio.value === correctAnswer) {
-                            score++;
-                            label.classList.add('correct');
-                        } else {
-                            label.classList.add('wrong');
-                        }
-                    }
-
-                    // destaca a correta se o usuário errou
-                    if (radio.value === correctAnswer) {
-                        const selected = document.querySelector(`input[name="${question}"]:checked`);
-                        if (selected && selected.value !== correctAnswer) {
-                            label.classList.add('correct');
-                            label.style.fontWeight = 'bold';
-                        }
-                    }
-                });
-            }
-
-            const resultsContainer = document.getElementById('quiz-results');
-            resultsContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} perguntas!`;
-
-            // remove classes antigas
-            resultsContainer.classList.remove('success', 'medium', 'error');
-
-            if (score === totalQuestions) {
-                resultsContainer.classList.add('success');
-            } else if (score > totalQuestions / 2) {
-                resultsContainer.classList.add('medium');
-            } else {
-                resultsContainer.classList.add('error');
-            }
-
-            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-    </script>
-
+        </section>
+        <br />
     </main>
 
     <footer id="contato">
