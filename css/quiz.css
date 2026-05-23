@@ -1,6 +1,5 @@
 /* SECTION QUIZ */
 #quiz {
-  margin-top: 60px;
   background-color: #ffffff;
   padding: 32px;
   border-radius: 12px;
@@ -9,10 +8,7 @@
 
 /* TÍTULO */
 #quiz h2 {
-  font-size: 28px;
-  font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 /* CONTAINER */
@@ -45,6 +41,7 @@
 #submit-quiz {
   background-color: #2563eb;
   color: white;
+  font-size: 1.375rem;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 8px;
