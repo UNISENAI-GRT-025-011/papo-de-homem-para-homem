@@ -9,13 +9,13 @@ function getYouTubeThumbnail(videoId) {
     return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 }
 
-function getYouTubeThumbnailFallback(videoId) {
-    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-}
+    function getYouTubeThumbnailFallback(videoId) {
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    }
 
 function createVideoSlide(video, index) {
     const slide = document.createElement('div');
-    slide.className = 'slide';
+    slide.className = 'slide' + (index === 0 ? ' active' : '');
     slide.dataset.index = index;
 
     const wrapper = document.createElement('div');
@@ -106,6 +106,10 @@ function initCarousel() {
 
         indicators.forEach((ind, i) => {
             ind.classList.toggle('active', i === currentIndex);
+        });
+
+        slides.forEach((s, i) => {
+            s.classList.toggle('active', i === currentIndex);
         });
 
         preloadAdjacentVideos(currentIndex);

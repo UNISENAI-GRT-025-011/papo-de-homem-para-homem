@@ -12,6 +12,17 @@ header .logos {
     justify-content: space-around;
     padding: 0.5rem 0;
     height: min(10vw, 4.5rem);
+    overflow: visible;
+}
+
+header .logos .brasao {
+    height: min(10vw, 4.5rem);
+    align-self: center;
+}
+
+header .logos .logo-phph {
+    height: min(17vw, 7.5rem);
+    align-self: center;
 }
 
 header nav {

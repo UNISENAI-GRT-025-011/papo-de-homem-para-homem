@@ -1,13 +1,16 @@
 .tiktok-carousel {
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 430px;
     height: 70vh;
     max-height: 700px;
-    margin: 0 auto;
+    margin: 2.5rem auto;
     overflow: hidden;
-    border-radius: var(--raio-das-bordas-medio);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 1.75rem;
+    background: linear-gradient(160deg, #1a1f2e, #050608);
+    box-shadow:
+        0 25px 60px -15px rgba(0, 40, 101, 0.35),
+        0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 @media (min-width: 768px) {
@@ -58,7 +61,15 @@
     -ms-scroll-snap-stop: always;
     scroll-snap-stop: always;
     position: relative;
-    background: #000;
+    background: transparent;
+    transform: scale(0.94);
+    opacity: 0.55;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+.tiktok-carousel .slide.active {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .tiktok-carousel .video-wrapper {
@@ -68,6 +79,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 1.75rem;
+    overflow: hidden;
+}
+
+.tiktok-carousel .video-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.78) 100%);
+    pointer-events: none;
+    z-index: 5;
 }
 
 .tiktok-carousel .video-wrapper iframe {
@@ -85,6 +107,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 6;
 }
 
 .tiktok-carousel .thumbnail {
@@ -95,7 +118,11 @@
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.6s ease;
+}
+
+.tiktok-carousel .slide.active .thumbnail {
+    transform: scale(1.03);
 }
 
 .tiktok-carousel .thumbnail.hidden {
@@ -108,21 +135,27 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    background: rgba(0, 0, 0, 0.7);
+    width: 76px;
+    height: 76px;
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     z-index: 10;
 }
 
 .tiktok-carousel .play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background: rgba(255, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.08);
+    background: rgba(156, 212, 237, 0.25);
+    border-color: rgba(156, 212, 237, 0.7);
+    box-shadow: 0 8px 32px rgba(156, 212, 237, 0.45);
 }
 
 .tiktok-carousel .play-btn::before {
@@ -137,26 +170,27 @@
 
 .tiktok-carousel .indicators {
     position: absolute;
-    bottom: 20px;
+    bottom: 22px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
     z-index: 20;
 }
 
 .tiktok-carousel .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tiktok-carousel .indicator.active {
-    background: #fff;
-    transform: scale(1.3);
+    width: 26px;
+    background: linear-gradient(90deg, var(--cor-azul-leve), #fff);
 }
 
 .tiktok-carousel .nav-arrow {
@@ -165,10 +199,12 @@
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     cursor: pointer;
     display: -webkit-box;
@@ -180,20 +216,20 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    font-size: 24px;
+    color: #fff;
+    font-size: 22px;
     font-weight: bold;
     z-index: 20;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    opacity: 1;
-    visibility: visible;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .tiktok-carousel .nav-arrow:hover {
-    background: #fff;
-    -webkit-transform: translateY(-50%) scale(1.1);
-    -ms-transform: translateY(-50%) scale(1.1);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(156, 212, 237, 0.3);
+    border-color: rgba(156, 212, 237, 0.6);
+    -webkit-transform: translateY(-50%) scale(1.08);
+    -ms-transform: translateY(-50%) scale(1.08);
+    transform: translateY(-50%) scale(1.08);
 }
 
 .tiktok-carousel .nav-arrow.prev {
@@ -206,23 +242,34 @@
 
 .tiktok-carousel .video-label {
     position: absolute;
-    bottom: 60px;
-    left: 15px;
-    right: 15px;
+    bottom: 64px;
+    left: 16px;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.01em;
+    padding: 0.4rem 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
     z-index: 15;
 }
 
 .tiktok-carousel .swipe-hint {
     position: absolute;
-    bottom: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
+    top: 18px;
+    right: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
     z-index: 15;
     animation: pulse 2s infinite;
 }
@@ -236,6 +283,10 @@
     .tiktok-carousel {
         max-width: 100%;
         height: 60vh;
+        border-radius: 0;
+    }
+
+    .tiktok-carousel .video-wrapper {
         border-radius: 0;
     }
 }

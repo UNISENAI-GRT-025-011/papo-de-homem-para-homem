@@ -17,62 +17,140 @@
   margin: 0 auto;
 }
 
-/* PERGUNTAS */
-.mb-6 {
-  margin-bottom: 24px;
+.hidden {
+  display: none !important;
+}
+
+/* PROGRESSO */
+#quiz-progress {
+  margin-bottom: 28px;
+}
+
+#quiz-progress-text {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+#quiz-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#quiz-progress-fill {
+  height: 100%;
+  background-color: #2563eb;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* PERGUNTA */
+.quiz-question-text {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+
+#quiz-question {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#quiz-question.question-enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#quiz-question.question-exit {
+  opacity: 0;
+  transform: translateX(24px);
 }
 
 /* OPÇÕES */
-.space-y-2 label {
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option {
   display: block;
-  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
   border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-bottom: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 1rem;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.space-y-2 label:hover {
+.quiz-option:hover:not(:disabled) {
   background-color: #f5f5f5;
+  border-color: #2563eb;
 }
 
-/* BOTÃO */
-#submit-quiz {
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.correct {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+  font-weight: bold;
+  animation: pop 0.4s ease;
+}
+
+.quiz-option.wrong {
+  background-color: #f8d7da;
+  border: 1px solid #dc3545;
+  animation: shake 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* BOTÕES */
+.quiz-next-wrapper {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.quiz-btn {
   background-color: #2563eb;
   color: white;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  animation: fade-in 0.3s ease;
 }
 
-#submit-quiz:hover {
+.quiz-btn:hover {
   background-color: #1d4ed8;
 }
 
-/* RESULTADO */
+/* RESULTADO FINAL */
+#quiz-final {
+  animation: fade-in 0.4s ease;
+}
+
 #quiz-results {
   margin-top: 20px;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
 }
-/* RESPOSTAS */
-.correct {
-  background-color: #d4edda;
-  border: 1px solid #28a745;
-}
 
-.wrong {
-  background-color: #f8d7da;
-  border: 1px solid #dc3545;
-}
-
-/* RESULTADO FINAL */
 .success {
   color: #28a745;
 }
@@ -83,4 +161,73 @@
 
 .error {
   color: #dc3545;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONFETE */
+#confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 14px;
+  opacity: 0.9;
+  transform: rotate(var(--rotation, 0deg));
+  animation-name: confetti-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    top: -10px;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    transform: rotate(var(--rotation, 360deg));
+    opacity: 0.8;
+  }
+}
+
+/* ALERTA DE ERRO */
+#alert-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+}
+
+#alert-overlay img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(220, 53, 69, 0.3);
+}
+
+#alert-overlay.alert-shake img {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
 }
