@@ -81,3 +81,60 @@ ul li::before {
         justify-content: center;
     }
 }
+
+/* Cards da página Tipos de Violência */
+.violence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0 3rem;
+}
+
+.violence-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: var(--raio-das-bordas-medio);
+    background: #f4f7fb;
+    border-left: 0.4rem solid var(--cor-azul-marinho);
+}
+
+.violence-card:last-child {
+    grid-column: 1 / -1;
+}
+
+.violence-card img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.violence-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.violence-card .regular {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+@media only screen and (max-width: 50rem) {
+    .violence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .violence-card:last-child {
+        grid-column: auto;
+    }
+}
+
+@media only screen and (max-width: 32rem) {
+    .violence-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "papo-de-homem-para-homem",
+  "version": "1.0.0",
+  "description": "Projeto de conscientização sobre violência doméstica da Polícia Civil de MT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "license": "ISC"
+}

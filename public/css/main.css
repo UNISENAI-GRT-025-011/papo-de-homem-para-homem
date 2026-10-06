@@ -1,0 +1,8 @@
+/* Arquivo principal: importa os estilos organizados por responsabilidade. */
+@import url("variables.css");
+@import url("reset.css");
+@import url("header.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("footer.css");
+@import url("quiz.css");
